@@ -1,2 +1,2 @@
 # LuxcatStudio.github.io
-web
+web：https://luxcatstudio.nacho-neko.cn/
