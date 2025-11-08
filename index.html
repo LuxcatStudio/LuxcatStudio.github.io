@@ -172,7 +172,7 @@
             box-shadow: 0 10px 20px rgba(255, 107, 174, 0.4);
         }
 
-        .about {
+        .about-photos-section {
             padding: 100px 0;
             background: rgba(26, 32, 44, 0.7);
         }
@@ -187,7 +187,7 @@
             color: transparent;
         }
 
-        .about-content {
+        .about-photos-content {
             display: flex;
             align-items: center;
             gap: 50px;
@@ -195,36 +195,52 @@
 
         .about-text {
             flex: 1;
+            padding: 30px;
+            background: rgba(45, 55, 72, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-text:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 107, 174, 0.2);
         }
 
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--pink-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .about-text p {
             margin-bottom: 20px;
             font-size: 1.1rem;
+            line-height: 1.8;
         }
 
-        .about-image {
+        .photo-gallery {
             flex: 1;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .cat-illustration {
+        .photo-gallery img {
             width: 100%;
-            max-width: 400px;
-            height: 300px;
-            background: var(--gradient);
+            max-width: 500px;
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            animation: float 3s ease-in-out infinite;
-            box-shadow: 0 10px 30px rgba(255, 107, 174, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255, 107, 174, 0.3);
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(255, 107, 174, 0.3);
         }
 
         footer {
@@ -267,17 +283,17 @@
                 font-size: 1.2rem;
             }
 
-            .about-content {
+            .about-photos-content {
                 flex-direction: column;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
+            .about-text {
+                order: 2;
             }
 
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
+            .photo-gallery {
+                order: 1;
+                margin-bottom: 30px;
             }
         }
     </style>
@@ -308,26 +324,28 @@
         </div>
     </section>
 
-    <section class="about" id="about">
+    <section class="about-photos-section" id="about">
         <div class="container">
-            <h2 class="section-title">关于我们</h2>
-            <div class="about-content">
+            <h2 class="section-title">关于我们 & 猫猫写真集</h2>
+            <div class="about-photos-content">
                 <div class="about-text">
-                    <h3>次猫猫喵~ 🐾</h3>
-                    <p>Luxcat Studio 是一个充满创意与热情的技术团队。</p>         
+                    <h3><i class="fas fa-cat"></i> 次猫猫喵~ 🐾</h3>
+                    <p>Luxcat Studio 是一个充满创意与热情的技术团队。我们致力于将技术与艺术完美融合，创造出既美观又实用的作品。</p>
+                    <p>我们的团队成员都是热爱技术的猫奴，相信通过代码和设计可以创造更美好的明天。</p>
+                    <p>在 Luxcat Studio，我们不仅关注技术实现，更注重用户体验和视觉美感，让每一件作品都充满温度和个性。</p>
+                </div>
+                <div class="photo-gallery">
+                    <img src="https://github.com/LuxcatStudio/LuxcatStudio.github.io/blob/main/neko1.jpg" alt="喵">
                 </div>
             </div>
         </div>
     </section>
 
-
     <footer>
         <div class="container">
             <p>🌙 <b>Luxcat Studio</b> · 为了更美好的明天而存在</p>
             <p style="margin-top: 10px; opacity: 0.7;">&copy; 2025 Luxcat Studio. 保留所有权利。</p>
-            <footer>
-                <a href="https://beian.miit.gov.cn/" target="_blank">V陇ICP备2024013856号-1</a>
-            </footer>
+            <a href="https://beian.miit.gov.cn/" target="_blank">V陇ICP备2024013856号-1</a>
         </div>
     </footer>
 
