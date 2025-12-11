@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxcat Studio - 为了更美好的明天而存在</title>
+    <meta name="description" content="Luxcat Studio - 一个充满幻想与温度的技术与艺术猫窝，致力于将技术与艺术完美融合，创造出既美观又实用的作品。">
+    <meta name="keywords" content="Luxcat Studio, 技术团队, 创意设计, 猫窝, 技术艺术">
+    <meta name="author" content="Luxcat Studio">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://luxcat.nacho-neko.cn/">
+    <meta property="og:title" content="Luxcat Studio - 为了更美好的明天而存在">
+    <meta property="og:description" content="一个充满幻想与温度的技术与艺术猫窝">
+    <meta property="og:image" content="https://luxcat.nacho-neko.cn/neko1.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://luxcat.nacho-neko.cn/">
+    <meta property="twitter:title" content="Luxcat Studio - 为了更美好的明天而存在">
+    <meta property="twitter:description" content="一个充满幻想与温度的技术与艺术猫窝">
+    <meta property="twitter:image" content="https://luxcat.nacho-neko.cn/neko1.jpg">
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -371,6 +393,55 @@
             box-shadow: 0 15px 35px rgba(255, 107, 174, 0.3);
         }
 
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 174, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(255, 107, 174, 0.4);
+        }
+
+        /* Skip to content link for accessibility */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--pink);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+
         footer {
             background: rgba(255, 240, 245, 0.9);
             padding: 40px 0;
@@ -436,9 +507,25 @@
             }
         }
     </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Luxcat Studio",
+      "url": "https://luxcat.nacho-neko.cn/",
+      "logo": "https://luxcat.nacho-neko.cn/neko1.jpg",
+      "description": "一个充满幻想与温度的技术与艺术猫窝",
+      "sameAs": []
+    }
+    </script>
 </head>
 <body>
-    <div id="loader-wrapper">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-to-content">跳转到主要内容</a>
+    
+    <div id="loader-wrapper" role="status" aria-busy="true" aria-live="polite" aria-label="页面加载中">
         <div class="hologram-spinner"></div>
         
         <div class="loading-ui">
@@ -453,57 +540,65 @@
         </div>
     </div>
 
-    <header>
+    <header role="banner">
         <div class="container">
-            <nav>
+            <nav role="navigation" aria-label="主导航">
                 <div class="logo">
-                    <i class="fas fa-paw"></i>
+                    <i class="fas fa-paw" aria-hidden="true"></i>
                     <span>Luxcat Studio</span>
                 </div>
                 <div class="nav-links">
-                    <a href="#home">首页</a>
-                    <a href="#about">关于我们</a>
+                    <a href="#home" aria-label="跳转到首页">首页</a>
+                    <a href="#about" aria-label="跳转到关于我们">关于我们</a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Luxcat Studio</h1>
-                <p>一个充满幻想与温度的技术与艺术猫窝</p>
-                <a href="#about" class="btn">探索更多</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="about-photos-section" id="about">
-        <div class="container">
-            <h2 class="section-title">关于我们</h2>
-            <div class="about-photos-content">
-                <div class="about-text">
-                    <h3><i class="fas fa-cat"></i> 次猫猫喵~ 🐾</h3>
-                    <p>Luxcat Studio 是一个充满创意与热情的技术团队喵。我们致力于将技术与艺术完美融合，创造出既美观又实用的作品喵~。</p>
-                    <p>我们的团队成员都是高技术的猫娘喵!你说什么？哪里有猫薄荷喵！</p>
-                    <p>在 Luxcat Studio，我们不仅关注技术实现，更注重用户体验和视觉美感w，让每一件作品都充满温度和个性喵。</p>
-                </div>
-                <div class="photo-gallery">
-                    <img src="/neko1.jpg" alt="喵">
+    <main id="main-content">
+        <section class="hero" id="home" aria-label="首页欢迎区">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Luxcat Studio</h1>
+                    <p>一个充满幻想与温度的技术与艺术猫窝</p>
+                    <a href="#about" class="btn" aria-label="探索更多关于我们的信息">探索更多</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
+        <section class="about-photos-section" id="about" aria-labelledby="about-title">
+            <div class="container">
+                <h2 class="section-title" id="about-title">关于我们</h2>
+                <div class="about-photos-content">
+                    <div class="about-text">
+                        <h3><i class="fas fa-cat" aria-hidden="true"></i> 次猫猫喵~ 🐾</h3>
+                        <p>Luxcat Studio 是一个充满创意与热情的技术团队喵。我们致力于将技术与艺术完美融合，创造出既美观又实用的作品喵~。</p>
+                        <p>我们的团队成员都是高技术的猫娘喵!你说什么？哪里有猫薄荷喵！</p>
+                        <p>在 Luxcat Studio，我们不仅关注技术实现，更注重用户体验和视觉美感w，让每一件作品都充满温度和个性喵。</p>
+                    </div>
+                    <div class="photo-gallery">
+                        <img src="/neko1.jpg" alt="Luxcat Studio 团队吉祥物猫猫" loading="lazy" width="1639" height="2048">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <footer role="contentinfo">
         <div class="container">
             <p>🌙 <b>Luxcat Studio</b> · 为了更美好的明天而存在</p>
             <p style="margin-top: 10px; opacity: 0.7;">&copy; 2025 Luxcat Studio. 保留所有权利。</p>
-            <a href="https://beian.miit.gov.cn/" target="_blank">陇ICP备2024013856号-1</a>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">陇ICP备2024013856号-1</a>
         </div>
     </footer>
 
     <script>
+        // Loading animation
         document.addEventListener("DOMContentLoaded", () => {
             const loaderWrapper = document.getElementById('loader-wrapper');
             const loadingBar = document.getElementById('loading-bar');
@@ -520,7 +615,7 @@
             ];
 
             const loadingInterval = setInterval(() => {
-                progress += Math.random() * 3; 
+                progress += Math.random() * 5; 
                 
                 if (progress >= 100) {
                     progress = 100;
@@ -533,6 +628,11 @@
 
                     setTimeout(() => {
                         loaderWrapper.classList.add('loaded-fade-out');
+                        loaderWrapper.setAttribute('aria-busy', 'false');
+                        // Remove from DOM after fade out to prevent screen reader access
+                        setTimeout(() => {
+                            loaderWrapper.remove();
+                        }, 800);
                     }, 500);
 
                 } else {
@@ -542,9 +642,10 @@
                          loadingStatus.innerText = statusMessages[Math.floor(Math.random() * statusMessages.length)];
                     }
                 }
-            }, 60);
+            }, 50);
         });
 
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -558,12 +659,44 @@
             });
         });
 
+        // Header background change on scroll
+        let ticking = false;
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.9)';
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    const header = document.querySelector('header');
+                    const backToTop = document.getElementById('backToTop');
+                    
+                    if (window.scrollY > 100) {
+                        header.style.background = 'rgba(255, 255, 255, 0.95)';
+                        backToTop.classList.add('show');
+                    } else {
+                        header.style.background = 'rgba(255, 255, 255, 0.9)';
+                        backToTop.classList.remove('show');
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Back to top button
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Keyboard navigation support - Ctrl+Shift+Home to avoid browser conflicts
+        document.addEventListener('keydown', function(e) {
+            // Press Ctrl+Shift+Home to go to top
+            if (e.key === 'Home' && e.ctrlKey && e.shiftKey) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
         });
     </script>
