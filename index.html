@@ -8,18 +8,21 @@
     <meta name="keywords" content="Luxcat Studio, 技术团队, 创意设计, 猫窝, 技术艺术">
     <meta name="author" content="Luxcat Studio">
     
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://luxcat.nacho-neko.cn/">
     <meta property="og:title" content="Luxcat Studio - 为了更美好的明天而存在">
     <meta property="og:description" content="一个充满幻想与温度的技术与艺术猫窝">
     <meta property="og:image" content="https://luxcat.nacho-neko.cn/neko1.jpg">
     
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://luxcat.nacho-neko.cn/">
     <meta property="twitter:title" content="Luxcat Studio - 为了更美好的明天而存在">
     <meta property="twitter:description" content="一个充满幻想与温度的技术与艺术猫窝">
     <meta property="twitter:image" content="https://luxcat.nacho-neko.cn/neko1.jpg">
     
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
@@ -390,6 +393,7 @@
             box-shadow: 0 15px 35px rgba(255, 107, 174, 0.3);
         }
 
+        /* Back to top button */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -422,6 +426,7 @@
             box-shadow: 0 6px 20px rgba(255, 107, 174, 0.4);
         }
 
+        /* Skip to content link for accessibility */
         .skip-to-content {
             position: absolute;
             top: -40px;
@@ -503,6 +508,7 @@
         }
     </style>
     
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -516,6 +522,7 @@
     </script>
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="skip-to-content">跳转到主要内容</a>
     
     <div id="loader-wrapper" role="status" aria-busy="true" aria-live="polite" aria-label="页面加载中">
@@ -591,6 +598,7 @@
     </footer>
 
     <script>
+        // Loading animation
         document.addEventListener("DOMContentLoaded", () => {
             const loaderWrapper = document.getElementById('loader-wrapper');
             const loadingBar = document.getElementById('loading-bar');
@@ -621,6 +629,7 @@
                     setTimeout(() => {
                         loaderWrapper.classList.add('loaded-fade-out');
                         loaderWrapper.setAttribute('aria-busy', 'false');
+                        // Remove from DOM after fade out to prevent screen reader access
                         setTimeout(() => {
                             loaderWrapper.remove();
                         }, 800);
@@ -636,6 +645,7 @@
             }, 50);
         });
 
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -670,6 +680,7 @@
             }
         });
 
+        // Back to top button
         document.getElementById('backToTop').addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
@@ -677,7 +688,9 @@
             });
         });
 
+        // Keyboard navigation support - Ctrl+Shift+Home to avoid browser conflicts
         document.addEventListener('keydown', function(e) {
+            // Press Ctrl+Shift+Home to go to top
             if (e.key === 'Home' && e.ctrlKey && e.shiftKey) {
                 e.preventDefault();
                 window.scrollTo({
